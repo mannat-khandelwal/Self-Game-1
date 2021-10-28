@@ -31,6 +31,14 @@ function draw() {
   background(0);
   edges = createEdgeSprites();
  
+ if(keyDown(UP_ARROW)){ 
+    plane.y = plane.y - 5
+  }
+
+  if(keyDown(DOWN_ARROW)){
+    plane.y = plane.y + 5
+  }
+ 
   plane.collide(edges);
  
   monsters();  
@@ -46,7 +54,6 @@ function monsters(){
     var ms = createSprite(750,0,10,10);
     ms.velocityX = -4;
     ms.y = Math.round(random(25,600));
-    msG.add(ms);
     
     var rand = Math.round(random(1,3));
     switch(rand) {
@@ -71,7 +78,6 @@ function monsters1(){
     var ms1 = createSprite(750,0,10,10);
     ms1.velocityX = -4;
     ms1.y = Math.round(random(25,600));
-    msG1.add(ms1);
     
     var rand = Math.round(random(1,2));
     switch(rand) {
